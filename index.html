@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aide-mémoire</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --green: #2c5f3a;
+    --green-light: #e8f0ea;
+    --text: #1a1a18;
+    --muted: #6b6b60;
+    --border: #e0dbd0;
+    --bg: #f8f6f1;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 10;
+}
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+}
+.logo em { font-style: italic; color: var(--green); }
+
+.nav-right {
+    display: flex; gap: 32px; align-items: center;
+}
+.nav-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+}
+.nav-link:hover { color: var(--green); }
+.nav-btn {
+    background: var(--green);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.nav-btn:hover { opacity: 0.85; }
+
+/* HERO */
+.hero {
+    padding: 100px 48px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+.hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 28px;
+}
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+.hero h1 em { font-style: italic; color: var(--green); }
+.hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+.hero-btns {
+    display: flex; gap: 16px; justify-content: center;
+}
+.btn-main {
+    background: var(--green);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.btn-main:hover { opacity: 0.85; }
+.btn-ghost {
+    color: var(--text);
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+/* DIVIDER */
+hr {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+}
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+}
+.title em { font-style: italic; color: var(--green); }
+
+/* STEPS */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+    max-width: 700px;
+}
+.step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600;
+    color: var(--green-light);
+    -webkit-text-stroke: 1px var(--green);
+    color: transparent;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+.step h3 {
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.step p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* LESSONS GRID */
+.lessons-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+.see-all {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    text-decoration: none;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+}
+.card:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    transform: translateY(-3px);
+}
+.thumb {
+    height: 110px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+    position: relative;
+}
+.t1 { background: #e8f0ea; }
+.t2 { background: #e8f5e8; }
+.t3 { background: #e8e8f5; }
+.t4 { background: #f5f0e8; }
+.t5 { background: #f5e8e8; }
+.t6 { background: #f0f0f0; }
+.count {
+    position: absolute; bottom: 8px; right: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 1px;
+    background: rgba(255,255,255,0.85);
+    padding: 2px 8px; border-radius: 20px;
+    color: var(--muted);
+}
+.card-body { padding: 16px 18px 18px; }
+.cat a.cat-link {
+    color: var(--green);
+    text-decoration: none;
+}
+.cat a.cat-link:hover { text-decoration: underline; }
+.card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--text);
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+.card-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+}
+.card-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+.author { font-size: 0.78rem; color: var(--muted); }
+.apt-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px; letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--green-light);
+    color: var(--green);
+    padding: 2px 7px; border-radius: 3px;
+}
+
+/* PHILOSOPHY */
+.phil-wrap {
+    background: var(--green);
+    padding: 72px 48px;
+}
+.phil-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.phil-wrap .label { color: rgba(255,255,255,0.5); }
+.phil-wrap .title { color: #fff; margin-bottom: 40px; }
+.phil-wrap .title em { color: #a8d4b0; }
+.phil-list {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+.phil-list::-webkit-scrollbar { display: none; }
+.phil-item {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    min-width: 180px;
+    flex: 1;
+}
+.phil-item h4 {
+    font-size: 0.92rem; font-weight: 700;
+    color: #fff; margin-bottom: 8px;
+}
+.phil-item p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7; font-weight: 300;
+}
+
+/* APT CTA */
+.apt-cta {
+    padding: 80px 48px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+.apt-cta .title { margin-bottom: 16px; }
+.apt-cta p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+/* FOOTER */
+footer {
+    padding: 28px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.f-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+}
+.f-logo em { font-style: italic; color: var(--green); }
+.f-mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-right .nav-link { display: none; }
+    .hero, .section, .apt-cta { padding: 60px 24px; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .phil-wrap { padding: 60px 24px; }
+    .phil-list { grid-template-columns: repeat(2, 1fr); }
+    footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
+}
+@media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr; }
+    .phil-list { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="logo">Aide-<em>mémoire</em></a>
+    <div class="nav-right">
+        <a href="#lessons" class="nav-link">Bài học</a>
+        <a href="#how" class="nav-link">Cách dùng</a>
+        <a href="#" class="nav-btn">Tạo bài học</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-tag">Nền tảng học tập cộng đồng</div>
+    <h1>Học sâu hơn.<br><em>Nhớ lâu hơn.</em></h1>
+    <p>Soạn bài học đầy đủ, chọn điểm cốt lõi —<br>để Aide-mémoire nhắc bạn ôn lại đúng lúc.</p>
+    <div class="hero-btns">
+        <a href="#lessons" class="btn-main">Khám phá bài học</a>
+        <a href="#how" class="btn-ghost">Cách hoạt động</a>
+    </div>
+</div>
+
+<hr>
+
+<div class="section" id="how">
+    <div class="label">Quy trình</div>
+    <div class="title">Từ bài học đầy đủ<br><em>đến flashcard tinh gọn</em></div>
+    <div class="steps" style="grid-template-columns: repeat(2,1fr); max-width:700px;">
+        <div class="step">
+            <div class="step-num">01</div>
+            <h3>Soạn & Chia sẻ</h3>
+            <p>Viết bài học đầy đủ, chi tiết trên website.<br>Publish lên cộng đồng để mọi người cùng học.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">02</div>
+            <h3>Học & Ôn luyện</h3>
+            <p>Chọn key points từ bài học.<br>Tạo flashcard trong APT.<br>Ôn lại đúng lúc sắp quên với spaced repetition.</p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="section" id="lessons">
+    <div class="lessons-top">
+        <div>
+            <div class="label">Bài học</div>
+            <div class="title">Kho kiến thức<br><em>cộng đồng</em></div>
+        </div>
+        <a href="lessons.html" class="see-all">Xem tất cả →</a>
+    </div>
+    <div class="grid">
+        <a href="#" class="card">
+            <div class="thumb t1">⚙️<span class="count">50 trang</span></div>
+            <div class="card-body">
+                <div class="cat"><a href="lessons.html?cat=vat-ly" class="cat-link">Vật Lý</a></div>
+                <div class="card-title">Chiến Binh Tre & Vật Lý</div>
+                <p class="card-desc">Cơ học qua lăng kính chế tạo rối tre truyền thống.</p>
+                <div class="card-foot">
+                    <span class="author">An Phong</span>
+                    <span class="apt-badge">APT</span>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="thumb t2">📊<span class="count">9 trang</span></div>
+            <div class="card-body">
+                <div class="cat"><a href="lessons.html?cat=cong-cu" class="cat-link">Công Cụ</a></div>
+                <div class="card-title">Excel Shortcuts Nâng Cao</div>
+                <p class="card-desc">Phím tắt và công thức quan trọng nhất để tăng tốc làm việc.</p>
+                <div class="card-foot">
+                    <span class="author">An Phong</span>
+                    <span class="apt-badge">APT</span>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="thumb t3">🤖<span class="count">8 trang</span></div>
+            <div class="card-body">
+                <div class="cat"><a href="lessons.html?cat=cong-nghe" class="cat-link">Công Nghệ</a></div>
+                <div class="card-title">Hướng Dẫn Sử Dụng AI</div>
+                <p class="card-desc">Khai thác AI hiệu quả trong học tập và công việc.</p>
+                <div class="card-foot">
+                    <span class="author">An Phong</span>
+                    <span class="apt-badge">APT</span>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="thumb t4">🧠<span class="count">10 trang</span></div>
+            <div class="card-body">
+                <div class="cat"><a href="lessons.html?cat=tu-duy" class="cat-link">Tư Duy</a></div>
+                <div class="card-title">Thinking Fast and Slow</div>
+                <p class="card-desc">Tóm tắt tinh gọn cuốn sách của Daniel Kahneman.</p>
+                <div class="card-foot">
+                    <span class="author">An Phong</span>
+                    <span class="apt-badge">APT</span>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="thumb t5">🌿<span class="count">8 trang</span></div>
+            <div class="card-body">
+                <div class="cat"><a href="lessons.html?cat=suc-khoe" class="cat-link">Sức Khỏe</a></div>
+                <div class="card-title">Sức Khỏe Toàn Diện</div>
+                <p class="card-desc">Kiến thức nền tảng về dinh dưỡng, vận động và tinh thần.</p>
+                <div class="card-foot">
+                    <span class="author">An Phong</span>
+                    <span class="apt-badge">APT</span>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="thumb t6">✏️</div>
+            <div class="card-body">
+                <div class="cat"><a href="lessons.html?cat=cong-dong" class="cat-link">Cộng Đồng</a></div>
+                <div class="card-title">Tạo bài học của bạn</div>
+                <p class="card-desc">Chia sẻ kiến thức với cộng đồng. Bài học của bạn có thể giúp nhiều người.</p>
+                <div class="card-foot">
+                    <span class="author" style="color:var(--green)">Bắt đầu →</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="phil-wrap">
+    <div class="phil-inner">
+        <div class="label">Triết lý</div>
+        <div class="title">Xây dựng trên<br><em>khoa học học tập</em></div>
+        <div class="phil-list">
+            <div class="phil-item">
+                <h4>Active Recall</h4>
+                <p>Tự trả lời trước khi lật thẻ. Mỗi lần cố nhớ là một lần củng cố não bộ.</p>
+            </div>
+            <div class="phil-item">
+                <h4>Spaced Repetition</h4>
+                <p>Ôn đúng lúc sắp quên — hiệu quả hơn ôn liên tục theo Ebbinghaus.</p>
+            </div>
+            <div class="phil-item">
+                <h4>Feynman Technique</h4>
+                <p>Viết bài để dạy người khác = buộc bạn phải hiểu thật sự.</p>
+            </div>
+            <div class="phil-item">
+                <h4>Pomodoro Technique</h4>
+                <p>Học tập trung 25 phút, nghỉ 5 phút. Duy trì sự tập trung và tránh kiệt sức.</p>
+            </div>
+            <div class="phil-item">
+                <h4>Eisenhower Matrix</h4>
+                <p>Ưu tiên đúng việc đúng lúc — phân biệt quan trọng và khẩn cấp.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="apt-cta">
+    <div class="label">Ứng dụng</div>
+    <div class="title">Học trên website.<br><em>Ôn trên điện thoại.</em></div>
+    <p>Key points từ bài học tự động sync sang app APT. Hệ thống tự nhắc bạn ôn đúng thẻ đúng lúc.</p>
+    <a href="#" class="btn-main">Tải APT trên Google Play</a>
+</div>
+
+<footer>
+    <div class="f-logo">Aide-<em>mémoire</em></div>
+    <div class="f-mono">Nền tảng học tập cộng đồng · 2025</div>
+    <div class="f-mono">save-file-apt.web.app</div>
+</footer>
+
+</body>
+</html>
