@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Philosophy — Aide-mémoire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8f6f1;
+            --text: #1a1a18;
+            --green: #2c5f3a;
+            --gold: #8a6930;
+            --border: #e0dbd0;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .quote-einstein {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--green);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .quote-einstein::after {
+            content: "— Albert Einstein";
+            display: block;
+            font-size: 1rem;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--gold);
+        }
+        .philosophy-content p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        .highlight {
+            font-weight: 600;
+            color: var(--green);
+            border-bottom: 2px solid var(--gold);
+        }
+        /* Video Wrapper */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .process-box {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .process-flow {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+        .creative-insight {
+            font-style: italic;
+            color: var(--gold);
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin: 40px 0;
+        }
+        .breakthrough {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-start {
+            display: block;
+            width: fit-content;
+            margin: 50px auto 0;
+            padding: 15px 40px;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .btn-start:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="quote-einstein">
+        "Imagination is more important than knowledge"
+    </div>
+
+    <div class="philosophy-content">
+        <p>Classical theory is the foundation. From the ancient <span class="highlight">Catapult</span> to modern robotics, the laws remains the same—but the ways we apply them are always evolving. Creativity has no limits when you let your imagination run free.</p>
+
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/IPCAXhuMFBk" 
+                title="Bamboo Puppet Fighting Game" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p>Real power lies in <strong>Imagination</strong>. Everything must "take place" in your mind before it becomes a reality. You must "see" it while it does not yet "exist."</p>
+
+        <div class="process-box">
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: var(--gold);">The Creative Loop</div>
+            <div class="process-flow">
+                <span style="color: var(--text); opacity: 0.6;">Knowledge</span> — 
+                <span style="color: var(--green); text-decoration: underline;">Imagination</span> — 
+                <span style="color: var(--gold);">Reality</span>
+            </div>
+        </div>
+
+        <p>Master the knowledge, understand the laws, but let imagination lead the way. Once an idea takes shape in your mind, bring it into practice. By combining these with your foundational insights, you can create true breakthroughs.</p>
+
+        <div class="creative-insight">
+            "I created my bamboo puppet by imagining the movement of every bamboo segment, every joint, and every strike... it all played out completely in my mind before it ever took physical form on the wooden table."
+        </div>
+
+        <p style="text-align: center; font-weight: 600;">You are fully capable of creating things <span class="breakthrough">even more fascinating</span> after finishing these lessons, aren't you?</p>
+    </div>
+
+    <a href="physics_15.html" class="btn-start">Start with the basics!</a>
+</div>
+
+</body>
+  </html>
+  
